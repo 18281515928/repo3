@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.gift</groupId>
+    <artifactId>gift-operator</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>gift-operator-domain</module>
+        <module>gift-operator-boot</module>
+        <module>gift-operator-facade</module>
+        <module>gift-operator-infrastructure</module>
+        <module>gift-operator-test</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+
+    <!-- 配置仓库镜像指向地址 -->
+    <repositories>
+        <repository>
+            <id>ifp.nexus</id>
+            <name>ifp.nexus</name>
+            <url>http://112.74.44.106:8060/repository/ifp</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ifp.nexus</id>
+            <name>ifp.nexus</name>
+            <url>http://112.74.44.106:8060/repository/ifp</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <!-- 发布maven私服 -->
+    <distributionManagement>
+        <repository>
+            <id>gift-release</id>
+            <name>GIFT-RELEASE</name>
+            <url>http://112.74.44.106:8060/repository/third-part/</url>
+        </repository>
+        <snapshotRepository>
+            <id>gift-snapshopts</id>
+            <name>GIFT-SNAPSHOTS</name>
+            <url>http://112.74.44.106:8060/repository/third-part/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

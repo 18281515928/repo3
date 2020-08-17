@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gift-plugin>
+    <!--    查询企业所有用户列表-服务定义-->
+    <domain-service code="com.gift.domain.operator.service.IoperatorDomain.queryALLoperator" name="查询企业所有用户列表"
+                    desc="用户中心-用户域-查询企业所有用户列表" version="1.0" priority="100" domain="gift-operator">
+    </domain-service>
+    <!-- 查询用户基本信息-服务定义 -->
+    <domain-service code="com.gift.domain.operator.service.IoperatorDomain.queryoperatorBaseInfo" name="查询用户基本信息"
+                    desc="用户中心-用户域-查询用户基本信息" version="1.0" priority="100"
+                    domain="gift-operator">
+    </domain-service>
+
+    <!-- 添加用户基本信息-服务定义 -->
+    <domain-service code="com.gift.domain.operator.service.IoperatorDomain.addoperatorBaseInfo" name="添加用户基本信息"
+                    desc="用户中心-用户域-添加用户基本信息" version="1.0" priority="100"
+                    domain="gift-operator">
+    </domain-service>
+
+    <!-- 更新用户基本信息-服务定义 -->
+    <domain-service code="com.gift.domain.operator.service.IoperatorDomain.updateoperatorBaseInfo" name="更新用户基本信息"
+                    desc="用户中心-用户域-更新用户基本信息" version="1.0" priority="100"
+                    domain="gift-operator">
+    </domain-service>
+
+    <!-- 更新用户状态-服务定义 -->
+    <domain-service code="com.gift.domain.operator.service.IoperatorDomain.updateoperatorStatus" name="更新用户状态"
+                    desc="用户中心-用户域-更新用户状态" version="1.0" priority="100"
+                    domain="gift-operator">
+    </domain-service>
+
+
+
+
+
+    <!--    添加客户基本信息-能力定义-->
+    <ability-definition code="com.gift.domain.operator.ability.IQueryOperatorBaseInfoAbility" name="查询用户基本信息能力"
+                        desc="用户中心-用户域-查询用户基本信息能力" version="1.0" priority="100"
+                        domain="gift-operator"
+                        interface="com.gift.domain.operator.ability.IQueryOperatorBaseInfoAbility">
+    </ability-definition>
+    <!-- 查询所有用户列表-能力定义 -->
+    <ability-definition code="com.gift.domain.operator.ability.IQueryAllOperatorAbility" name="查询所有用户信息列表"
+                        desc="用户中心-用户域-查询所有用户信息列表" version="1.0" priority="100"
+                        domain="gift-operator"
+                        interface="com.gift.domain.operator.ability.IQueryAllOperatorAbility">
+    </ability-definition>
+
+    <!-- 添加用户基本信息-能力定义 -->
+    <ability-definition code="com.gift.domain.operator.ability.IAddOperatorBaseInfoAbility" name="添加用户基本信息"
+                        desc="用户中心-用户域-添加用户基本信息" version="1.0" priority="100"
+                        domain="gift-operator"
+                        interface="com.gift.domain.operator.ability.IAddOperatorBaseInfoAbility">
+    </ability-definition>
+
+    <!-- 添加流水信息-能力定义 -->
+    <ability-definition code="com.gift.domain.operator.ability.IAddFlowInfoAbility" name="添加流水信息"
+                        desc="用户中心-用户域-添加流水信息" version="1.0" priority="100"
+                        domain="gift-operator"
+                        interface="com.gift.domain.operator.ability.IAddFlowInfoAbility">
+    </ability-definition>
+    <!--  参数校验-能力定义 -->
+    <ability-definition code="com.gift.domain.infrastructure.ability.IDomainParamCheckAbility" name=" 参数校验"
+                        desc="用户中心-用户域- 参数校验" version="1.0" priority="100"
+                        domain="CustomerDomain"
+                        interface="com.gift.domain.infrastructure.ability.IDomainParamCheckAbility">
+    </ability-definition>
+    <!-- 更新用户基本信息-能力定义 -->
+    <ability-definition code="com.gift.domain.operator.ability.IUpdateOperatorBaseInfoAbility" name="更新用户基本信息"
+                        desc="用户中心-用户域-更新用户基本信息" version="1.0" priority="100"
+                        domain="gift-operator"
+                        interface="com.gift.domain.operator.ability.IUpdateOperatorBaseInfoAbility">
+    </ability-definition>
+    <!-- 更新用户状态-能力定义 -->
+    <ability-definition code="com.gift.domain.operator.ability.IUpdateOperatorStatusAbility" name="更新用户状态"
+                        desc="用户中心-用户域-更新用户状态" version="1.0" priority="100"
+                        domain="gift-operator"
+                        interface="com.gift.domain.operator.ability.IUpdateOperatorStatusAbility">
+    </ability-definition>
+
+
+    <!--    查询用户基本信息能力实现-能力实现声明-->
+    <ability-impl code="com.gift.domain.operator.ability.impl.QueryOperatorBaseInfoAbilityImpl" name="查询用户基本信息能力实现"
+                  desc="用户中心-用户域-查询用户基本信息能力实现" version="1.0" priority="100"
+                  ability-code="com.gift.domain.operator.ability.IQueryOperatorBaseInfoAbility"
+                  implement="com.gift.domain.operator.ability.impl.QueryOperatorBaseInfoAbilityImpl"
+                  type="java">
+    </ability-impl>
+
+
+    <!-- 查询所有用户信息列表-能力实现声明 -->
+    <ability-impl code="com.gift.domain.operator.ability.impl.QueryAllOperatorAbilityImpl" name="查询客户基本信息域能力实现"
+                  desc="用户中心-用户域-查询客户基本信息能力" version="1.0" priority="100"
+                  ability-code="com.gift.domain.operator.ability.IQueryAllOperatorAbility"
+                  implement="com.gift.domain.operator.ability.impl.QueryAllOperatorAbilityImpl"
+                  type="java">
+    </ability-impl>
+
+    <ability-impl code="com.gift.domain.operator.ability.impl.AddOperatorBaseInfoAbilityImpl" name="添加用户信息"
+                  desc="用户中心-用户域-添加用户信息" version="1.0" priority="100"
+                  ability-code="com.gift.domain.operator.ability.IAddOperatorBaseInfoAbility"
+                  implement="com.gift.domain.operator.ability.impl.AddOperatorBaseInfoAbilityImpl"
+                  type="java">
+    </ability-impl>
+
+    <ability-impl code="com.gift.domain.operator.ability.impl.AddFlowInfoAbilityImpl" name="添加流水信息"
+                  desc="用户中心-用户域-添加流水信息" version="1.0" priority="100"
+                  ability-code="com.gift.domain.operator.ability.IAddFlowInfoAbility"
+                  implement="com.gift.domain.operator.ability.impl.AddFlowInfoAbilityImpl"
+                  type="java">
+    </ability-impl>
+
+    <ability-impl code="com.gift.domain.operator.ability.impl.UpdateOperatorBaseInfoAbilityImpl" name="更新用户信息"
+                  desc="用户中心-用户域-更新用户信息" version="1.0" priority="100"
+                  ability-code="com.gift.domain.operator.ability.IUpdateOperatorBaseInfoAbility"
+                  implement="com.gift.domain.operator.ability.impl.UpdateOperatorBaseInfoAbilityImpl"
+                  type="java">
+    </ability-impl>
+
+    <ability-impl code="com.gift.domain.operator.ability.impl.UpdateOperatorStatusAbilityImpl" name="更新用户状态"
+                  desc="用户中心-用户域-更新用户状态" version="1.0" priority="100"
+                  ability-code="com.gift.domain.operator.ability.IUpdateOperatorStatusAbility"
+                  implement="com.gift.domain.operator.ability.impl.UpdateOperatorStatusAbilityImpl"
+                  type="java">
+    </ability-impl>
+
+    <!--  参数校验-能力实现 -->
+    <ability-impl code="com.gift.domain.infrastructure.ability.impl.DomainParamCheckAbilityImpl" name=" 参数校验"
+                  desc="用户中心-用户域- 参数校验" version="1.0" priority="100"
+                  domain="CustomerDomain"
+                  ability-code="com.gift.domain.infrastructure.ability.IDomainParamCheckAbility"
+                  implement="com.gift.domain.infrastructure.ability.impl.DomainParamCheckAbilityImpl" type="java">
+
+        <ability-extension code="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint" name="参数校验"
+                           desc="用户中心-用户域-参数校验" version="1.0" priority="100"
+                           type-classify="interface"
+                           type-url="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint"
+                           multi-result="true">
+        </ability-extension>
+    </ability-impl>
+
+
+    <!--   根据用户信息查询用户是否存在-->
+    <ability-extension-impl
+            code="com.gift.domain.operator.extension.impl.CheckAddOperatorExtension4UifCertNo"
+            name="根据用户信息查询用户是否存在"
+            desc="用户中心-用户域-根据用户信息查询用户是否存在-根据用户信息查询用户是否存在" version="1.0" priority="100"
+            extension-code="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint"
+            implement="com.gift.domain.operator.extension.impl.CheckAddOperatorExtension4UifCertNo"
+            type-classify="interface"
+            type-url="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint">
+    </ability-extension-impl>
+
+    <!--   根据企业客户号查询用户是否存在-->
+    <ability-extension-impl
+            code="com.gift.domain.operator.extension.impl.CheckAddOperatorExtension4UifCstNo"
+            name="根据企业客户号查询用户是否存在"
+            desc="用户中心-用户域-根据企业客户号查询用户是否存在-根据企业客户号查询用户是否存在" version="1.0" priority="100"
+            extension-code="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint"
+            implement="com.gift.domain.operator.extension.impl.CheckAddOperatorExtension4UifCstNo"
+            type-classify="interface"
+            type-url="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint">
+    </ability-extension-impl>
+
+</gift-plugin>

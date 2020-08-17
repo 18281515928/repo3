@@ -1,0 +1,16 @@
+.idea/*
+*.jar
+gift-*/target/*
+.idea/workspace.xml
+gift-*/gift-*.iml
+gift-approval.iml
+*.iml
+.idea/libraries/*.xml
+/.idea/
+gift-approval-boot/src/test/
+gift-approval-domain/src/test/
+gift-approval-facade/src/main/resources/
+gift-approval-facade/src/test/
+gift-approval-infrastructure/src/main/resources/
+gift-approval-infrastructure/src/test/
+gift-approval-test/src/main/

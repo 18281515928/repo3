@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gift-business-group>
+    <gift-business code="" name="用户域操作" desc="用户域操作" version="1.0" priority="100"
+                   domain="gift-operator" bizCode="DV00">
+        <process code="operatorOp" name="操作用户的CURD" desc="操作用户的CURD" version="1.0" priority="100" type="">
+            <scenario>queryOperatorBaseInfo</scenario>
+            <scenario>queryAllOperator</scenario>
+            <scenario>addOperatorBaseInfo</scenario>
+            <scenario>updateOperatorStatus</scenario>
+            <scenario>updateOperatorBaseInfo</scenario>
+        </process>
+        <scenario-config id="queryOperatorBaseInfo" name="查询用户基本信息" desc="查询用户基本信息" version="1.0"
+                         priority="100">
+            <ability-impl-config ability-code="com.gift.domain.operator.ability.IQueryOperatorBaseInfoAbility"
+                                 impl-code="com.gift.domain.operator.ability.impl.QueryOperatorBaseInfoAbilityImpl"
+                                 version="1.0" name="查询用户信息"/>
+        </scenario-config>
+        <scenario-config id="queryAllOperator" name="查询所有用户信息列表" desc="查询所有用户信息列表" version="1.0"
+                         priority="100">
+            <!-- 能力实现配置 -->
+            <ability-impl-config ability-code="com.gift.domain.operator.ability.IQueryAllOperatorAbility"
+                                 impl-code="com.gift.domain.operator.ability.impl.QueryAllOperatorAbilityImpl"
+                                 name="查询所有用户信息列表">
+            </ability-impl-config>
+        </scenario-config>
+        <scenario-config id="addOperatorBaseInfo" name="添加用户信息" desc="添加用户信息" version="1.0"
+                         priority="100">
+
+            <ability-impl-config ability-code="com.gift.domain.infrastructure.ability.IDomainParamCheckAbility"
+                                 version="1.0" name="检查用户户是否存在的参数校验"
+                                 impl-code="com.gift.domain.infrastructure.ability.impl.DomainParamCheckAbilityImpl"/>
+            <!-- 能力实现配置 -->
+            <ability-impl-config ability-code="com.gift.domain.operator.ability.IAddOperatorBaseInfoAbility"
+                                 impl-code="com.gift.domain.operator.ability.impl.AddOperatorBaseInfoAbilityImpl"
+                                 name="添加用户信息">
+            </ability-impl-config>
+            <!-- 检查用户是否存在的扩展点 -->
+            <extension-impl-config
+                    extension-code="com.gift.domain.infrastructure.ability.extension.IDomainParamCheckExtensionPoint">
+
+                <!-- 根据企业客户号查询查询 -->
+                <extension-instance code="com.gift.domain.operator.extension.impl.CheckAddOperatorExtension4UifCstNo"
+                                    priority="100"/>
+
+                <!-- 根据身份信息查询查询 -->
+                <extension-instance code="com.gift.domain.operator.extension.impl.CheckAddOperatorExtension4UifCertNo"
+                                    priority="100"/>
+            </extension-impl-config>
+        </scenario-config>
+        <scenario-config id="updateOperatorStatus" name="修改用户状态" desc="修改用户状态" version="1.0"
+                         priority="100">
+            <!-- 能力实现配置 -->
+            <ability-impl-config ability-code="com.gift.domain.operator.ability.IUpdateOperatorStatusAbility"
+                                 impl-code="com.gift.domain.operator.ability.impl.UpdateOperatorStatusAbilityImpl"
+                                 name="修改用户状态">
+            </ability-impl-config>
+        </scenario-config>
+        <scenario-config id="updateOperatorBaseInfo" name="修改用户基本信息" desc="修改用户基本信息" version="1.0"
+                        priority="100">
+            <!-- 能力实现配置 -->
+            <ability-impl-config ability-code="com.gift.domain.operator.ability.IUpdateOperatorBaseInfoAbility"
+                                 impl-code="com.gift.domain.operator.ability.impl.UpdateOperatorBaseInfoAbilityImpl"
+                                 name="修改用户基本信息">
+            </ability-impl-config>
+        </scenario-config>
+    </gift-business>
+</gift-business-group>

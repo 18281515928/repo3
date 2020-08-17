@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gift.domain.operator.model.mapper.CuOperatorinfFlowMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gift.domain.operator.model.entity.CuOperatorinfFlow">
+        <id column="UFF_FLOWNO" property="uffFlowno" />
+        <result column="UFF_OPTTYPE" property="uffOpttype" />
+        <result column="UFF_OPTTIME" property="uffOpttime" />
+        <result column="UFF_SYSFLOWNO" property="uffSysflowno" />
+        <result column="UFF_GLOFLOWNO" property="uffGloflowno" />
+        <result column="UFF_CSTNO" property="uffCstno" />
+        <result column="UFF_USERNO" property="uffUserno" />
+        <result column="UFF_USERNAME" property="uffUsername" />
+        <result column="UFF_STT" property="uffStt" />
+        <result column="UFF_USERSEX" property="uffUsersex" />
+        <result column="UFF_DEPARTMENT" property="uffDepartment" />
+        <result column="UFF_CERTTYPE" property="uffCerttype" />
+        <result column="UFF_CERTNO" property="uffCertno" />
+        <result column="UFF_JOBTITLE" property="uffJobtitle" />
+        <result column="UFF_EMAIL" property="uffEmail" />
+        <result column="UFF_RIGHT" property="uffRight" />
+        <result column="UFF_AUTHLEVEL" property="uffAuthlevel" />
+        <result column="UFF_OPENDATE" property="uffOpendate" />
+        <result column="UFF_CANCELDATE" property="uffCanceldate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        UFF_FLOWNO, UFF_OPTTYPE, UFF_OPTTIME, UFF_SYSFLOWNO, UFF_GLOFLOWNO, UFF_CSTNO, UFF_USERNO, UFF_USERNAME, UFF_STT, UFF_USERSEX, UFF_DEPARTMENT, UFF_CERTTYPE, UFF_CERTNO, UFF_JOBTITLE, UFF_EMAIL, UFF_RIGHT, UFF_AUTHLEVEL, UFF_OPENDATE, UFF_CANCELDATE
+    </sql>
+
+</mapper>

@@ -1,0 +1,56 @@
+gift:
+  application:
+    install:
+      path: ""
+  component:
+    install:
+      path: ""
+  event-bus:
+    type: ""
+server:
+  port: 9004
+spring:
+  application:
+    name: git-operator
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    discovery:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://139.9.1.216:3306/magic-usercenter?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: ifpcloud
+    password: ifpcloud&1q2w3e4r
+    driver-class-name: com.mysql.cj.jdbc.Driver
+common-rpc:
+  debugger: true
+  contextPath: /
+  controllers:
+  - package: com.gift.domain.operator.service
+    controllerType: spring
+    feignClientName: com.gift.domain.operator-domain-service
+    contextPath: /
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8081/eureka
+  instance:
+    prefer-ip-address: true
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/*.xml
+  type-aliases-package: com.gift.domain.operator.model.entity
+  configuration:
+    # 本地开发调试信息
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  file:
+    path: /logs/app_logs/git-operator
+  config: classpath:logback-spring.xml
+ynet:
+  sequence:
+    #序列中心数据中心ID（每个中心不相同 ，最大值31）
+    datacenterid: 1
+    #序列中心应用ID（每台几不相同，最大值31）
+    workid: 1
+  common:
+    centerid: SE

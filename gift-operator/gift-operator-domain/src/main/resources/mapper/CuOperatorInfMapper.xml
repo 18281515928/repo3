@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gift.domain.operator.model.mapper.CuOperatorInfMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gift.domain.operator.model.entity.CuOperatorInf">
+        <id column="UIF_CSTNO" property="uifCstno" />
+        <result column="UIF_USERNO" property="uifUserno" />
+        <result column="UIF_USERNAME" property="uifUsername" />
+        <result column="UIF_STT" property="uifStt" />
+        <result column="UIF_USERSEX" property="uifUsersex" />
+        <result column="UIF_DEPARTMENT" property="uifDepartment" />
+        <result column="UIF_CERTTYPE" property="uifCerttype" />
+        <result column="UIF_CERTNO" property="uifCertno" />
+        <result column="UIF_JOBTITLE" property="uifJobtitle" />
+        <result column="UIF_EMAIL" property="uifEmail" />
+        <result column="UIF_RIGHT" property="uifRight" />
+        <result column="UIF_AUTHLEVEL" property="uifAuthlevel" />
+        <result column="UIF_OPENDATE" property="uifOpendate" />
+        <result column="UIF_CANCELDATE" property="uifCanceldate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        UIF_CSTNO, UIF_USERNO, UIF_USERNAME, UIF_STT, UIF_USERSEX, UIF_DEPARTMENT, UIF_CERTTYPE, UIF_CERTNO, UIF_JOBTITLE, UIF_EMAIL, UIF_RIGHT, UIF_AUTHLEVEL, UIF_OPENDATE, UIF_CANCELDATE
+    </sql>
+
+</mapper>
